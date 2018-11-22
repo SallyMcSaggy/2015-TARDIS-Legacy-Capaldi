@@ -1,0 +1,18 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/doctorwho1200/capaldi/catwalklights"
+	"$surfaceprop" "Metal"
+	"$nodecal" "1"
+	"$selfillummask" "models/doctorwho1200/capaldi/white"
+	"$selfillum" 1
+"Proxies" 
+{ 
+"AnimatedTexture" 
+{ 
+"animatedTextureVar" "$basetexture" 
+"animatedTextureFrameNumVar" "$frame" 
+"animatedTextureFrameRate" "15" 
+}
+} 
+}
+}

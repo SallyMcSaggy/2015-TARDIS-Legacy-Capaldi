@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/doctorwho1200/capaldi/ceilingl"
+	"$surfaceprop" "Metal"
+	"$selfillummask" "models/doctorwho1200/capaldi/white"
+	"$selfillum" 1
+}

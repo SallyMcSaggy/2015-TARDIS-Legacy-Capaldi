@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/doctorwho1200/capaldi/entry"
+	"$bumpmap" "models/doctorwho1200/capaldi/entry_n"
+	"$normalmap" "models/doctorwho1200/capaldi/entry_n"
+	"$surfaceprop" "Metal"
+}

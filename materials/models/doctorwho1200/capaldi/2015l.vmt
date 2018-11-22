@@ -1,0 +1,11 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/doctorwho1200/capaldi/2015"
+	"$bumpmap" "models/doctorwho1200/capaldi/2015n"
+	"$normalmap" "models/doctorwho1200/capaldi/2015n"
+	"$surfaceprop" "Wood_Solid"
+	"$selfillummask" "models/doctorwho1200/capaldi/white"
+	"$selfillum" 1
+	"$envmap" env_cubemap
+	"$envmaptint" "[0.5 0.5 0.5]"
+}

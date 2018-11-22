@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/doctorwho1200/capaldi/rotor"
+	"$surfaceprop" "Metal"
+}

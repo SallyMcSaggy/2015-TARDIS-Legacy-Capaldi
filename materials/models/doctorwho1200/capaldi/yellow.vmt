@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/doctorwho1200/capaldi/yellow"
+	"$selfillummask" "models/doctorwho1200/capaldi/white"
+	"$selfillum" 1
+}

@@ -1,0 +1,10 @@
+"VertexlitGeneric"
+{
+	"$additive" 1
+	"$basetexture" "models/doctorwho1200/capaldi/consoleglass"
+	"$surfaceprop" "Glass"
+	"$selfillummask" "models/doctorwho1200/capaldi/white"
+	"$selfillum" 1
+	"$translucent" 1
+	"$nodecal" "1"
+}

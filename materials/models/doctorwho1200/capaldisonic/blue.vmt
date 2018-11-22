@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/doctorwho1200/capaldisonic/blue"
+	"$surfaceprop" "Wood_Solid"
+}

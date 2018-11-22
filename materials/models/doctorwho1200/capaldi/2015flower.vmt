@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/doctorwho1200/capaldi/2015flower"
+	"$bumpmap" "models/doctorwho1200/capaldi/2015n"
+	"$normalmap" "models/doctorwho1200/capaldi/2015n"
+	"$surfaceprop" "Wood_Solid"
+}

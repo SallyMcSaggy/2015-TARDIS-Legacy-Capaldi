@@ -1,0 +1,12 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "The_Sniper_9/DoctorWho/Extras/key/tardiskey"
+	"$surfaceprop" "Metal"
+	Proxies
+	{
+		smithkeyColor
+		{
+			resultVar	$selfillumtint
+		}
+	}
+}
