@@ -60,10 +60,10 @@ hook.Add("PopulateToolMenu", "capaldi-PopulateToolMenu", function()
 		checkBox:SetValue( GetConVarNumber( "capaldi_doubletrace" ) )
 		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin()))
 		checkBox.OnChange = function(self,val)
-			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then
-				net.Start("capaldi-DoubleTrace")
-					net.WriteFloat(val==true and 1 or 0)
-				net.SendToServer()
+			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then -- If this is removed clientsidedly you can EXPLOIT and SPAM this using net.SendToServer. How dumb can some people be as to not add a secondary net var with the player themselves and CHECK ADMIN STATUS ON SERVER INSTEAD OF CLIENT. REALLY. I COULD RANT ON FOR 100000 YEARS WITH THIS. STOP checking ADMIN STATUS. ON. CLIENT. xD
+				net.Start("capaldi-DoubleTrace") -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+					net.WriteFloat(val==true and 1 or 0) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.SendToServer() -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
 			else
 				chat.AddText(Color(255,62,62), "WARNING: ", Color(255,255,255), "You must be an admin to change this option.")
 				chat.PlaySound()
@@ -74,12 +74,12 @@ hook.Add("PopulateToolMenu", "capaldi-PopulateToolMenu", function()
 		local checkBox = vgui.Create( "DCheckBoxLabel" )
 		checkBox:SetText( "Take damage (Admin Only)" )
 		checkBox:SetValue( GetConVarNumber( "capaldi_takedamage" ) )
-		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin()))
+		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin())) -- If this is removed clientsidedly you can EXPLOIT and SPAM this using net.SendToServer. How dumb can some people be as to not add a secondary net var with the player themselves and CHECK ADMIN STATUS ON SERVER INSTEAD OF CLIENT. REALLY. I COULD RANT ON FOR 100000 YEARS WITH THIS. STOP checking ADMIN STATUS. ON. CLIENT. xD
 		checkBox.OnChange = function(self,val)
-			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then
-				net.Start("capaldi-TakeDamage")
-					net.WriteFloat(val==true and 1 or 0)
-				net.SendToServer()
+			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.Start("capaldi-TakeDamage") -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+					net.WriteFloat(val==true and 1 or 0) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.SendToServer() -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
 			else
 				chat.AddText(Color(255,62,62), "WARNING: ", Color(255,255,255), "You must be an admin to change this option.")
 				chat.PlaySound()
@@ -90,12 +90,12 @@ hook.Add("PopulateToolMenu", "capaldi-PopulateToolMenu", function()
 		local checkBox = vgui.Create( "DCheckBoxLabel" )
 		checkBox:SetText( "Allow phasing in flightmode (Admin Only)" )
 		checkBox:SetValue( GetConVarNumber( "capaldi_flightphase" ) )
-		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin()))
+		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin())) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
 		checkBox.OnChange = function(self,val)
-			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then
-				net.Start("capaldi-FlightPhase")
-					net.WriteFloat(val==true and 1 or 0)
-				net.SendToServer()
+			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.Start("capaldi-FlightPhase") -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+					net.WriteFloat(val==true and 1 or 0) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.SendToServer() -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
 			else
 				chat.AddText(Color(255,62,62), "WARNING: ", Color(255,255,255), "You must be an admin to change this option.")
 				chat.PlaySound()
@@ -107,12 +107,12 @@ hook.Add("PopulateToolMenu", "capaldi-PopulateToolMenu", function()
 		checkBox:SetText( "Physical Damage (Admin Only)" )
 		checkBox:SetToolTip( "This enables/disables physical damage from hitting stuff at high speeds." )
 		checkBox:SetValue( GetConVarNumber( "capaldi_physdamage" ) )
-		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin()))
-		checkBox.OnChange = function(self,val)
-			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then
-				net.Start("capaldi-PhysDamage")
-					net.WriteFloat(val==true and 1 or 0)
-				net.SendToServer()
+		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin())) -- If this is removed clientsidedly you can EXPLOIT and SPAM this using net.SendToServer. How dumb can some people be as to not add a secondary net var with the player themselves and CHECK ADMIN STATUS ON SERVER INSTEAD OF CLIENT. REALLY. I COULD RANT ON FOR 100000 YEARS WITH THIS. STOP checking ADMIN STATUS. ON. CLIENT. xD
+		checkBox.OnChange = function(self,val) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.Start("capaldi-PhysDamage") -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+					net.WriteFloat(val==true and 1 or 0) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.SendToServer() -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
 			else
 				chat.AddText(Color(255,62,62), "WARNING: ", Color(255,255,255), "You must be an admin to change this option.")
 				chat.PlaySound()
@@ -124,12 +124,12 @@ hook.Add("PopulateToolMenu", "capaldi-PopulateToolMenu", function()
 		checkBox:SetText( "No-collide during teleport (Admin Only)" )
 		checkBox:SetToolTip( "This enables no-collide on the TARDIS when it is teleporting and disables it after again." )
 		checkBox:SetValue( GetConVarNumber( "capaldi_nocollideteleport" ) )
-		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin()))
-		checkBox.OnChange = function(self,val)
-			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then
-				net.Start("capaldi-NoCollideTeleport")
-					net.WriteFloat(val==true and 1 or 0)
-				net.SendToServer()
+		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin())) -- If this is removed clientsidedly you can EXPLOIT and SPAM this using net.SendToServer. How dumb can some people be as to not add a secondary net var with the player themselves and CHECK ADMIN STATUS ON SERVER INSTEAD OF CLIENT. REALLY. I COULD RANT ON FOR 100000 YEARS WITH THIS. STOP checking ADMIN STATUS. ON. CLIENT. xD
+		checkBox.OnChange = function(self,val) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.Start("capaldi-NoCollideTeleport") -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+					net.WriteFloat(val==true and 1 or 0) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.SendToServer() -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
 			else
 				chat.AddText(Color(255,62,62), "WARNING: ", Color(255,255,255), "You must be an admin to change this option.")
 				chat.PlaySound()
@@ -141,12 +141,12 @@ hook.Add("PopulateToolMenu", "capaldi-PopulateToolMenu", function()
 		checkBox:SetText( "Advanced Mode (Admin Only)" )
 		checkBox:SetToolTip( "This sets interior navigation to advanced, turn off for easy." )
 		checkBox:SetValue( GetConVarNumber( "capaldi_advanced" ) )
-		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin()))
-		checkBox.OnChange = function(self,val)
-			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then
-				net.Start("capaldi-AdvancedMode")
-					net.WriteFloat(val==true and 1 or 0)
-				net.SendToServer()
+		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin())) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+		checkBox.OnChange = function(self,val) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.Start("capaldi-AdvancedMode") -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+					net.WriteFloat(val==true and 1 or 0) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.SendToServer() -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
 			else
 				chat.AddText(Color(255,62,62), "WARNING: ", Color(255,255,255), "You must be an admin to change this option.")
 				chat.PlaySound()
@@ -158,12 +158,12 @@ hook.Add("PopulateToolMenu", "capaldi-PopulateToolMenu", function()
 		checkBox:SetText( "Lock doors during teleport (Admin Only)" )
 		checkBox:SetToolTip( "This stops players from entering/leaving while it is teleporting." )
 		checkBox:SetValue( GetConVarNumber( "capaldi_teleportlock" ) )
-		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin()))
-		checkBox.OnChange = function(self,val)
-			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then
-				net.Start("capaldi-TeleportLock")
-					net.WriteFloat(val==true and 1 or 0)
-				net.SendToServer()
+		checkBox:SetDisabled(not (LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin())) -- If this is removed clientsidedly you can EXPLOIT and SPAM this using net.SendToServer. How dumb can some people be as to not add a secondary net var with the player themselves and CHECK ADMIN STATUS ON SERVER INSTEAD OF CLIENT. REALLY. I COULD RANT ON FOR 100000 YEARS WITH THIS. STOP checking ADMIN STATUS. ON. CLIENT. xD
+		checkBox.OnChange = function(self,val) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.Start("capaldi-TeleportLock") -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+					net.WriteFloat(val==true and 1 or 0) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+				net.SendToServer() -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
 			else
 				chat.AddText(Color(255,62,62), "WARNING: ", Color(255,255,255), "You must be an admin to change this option.")
 				chat.PlaySound()
@@ -183,10 +183,10 @@ hook.Add("PopulateToolMenu", "capaldi-PopulateToolMenu", function()
 			slider.OnValueChanged = function(self,val)
 				if not (slider.val==val) then
 					slider.val=val
-					if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then
-						net.Start("capaldi-SpawnOffset")
-							net.WriteFloat(val)
-						net.SendToServer()
+					if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then -- If this is removed clientsidedly you can EXPLOIT and SPAM this using net.SendToServer. How dumb can some people be as to not add a secondary net var with the player themselves and CHECK ADMIN STATUS ON SERVER INSTEAD OF CLIENT. REALLY. I COULD RANT ON FOR 100000 YEARS WITH THIS. STOP checking ADMIN STATUS. ON. CLIENT. xD
+						net.Start("capaldi-SpawnOffset") -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+							net.WriteFloat(val) -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
+						net.SendToServer() -- <- Stop doing this. You can simply override IsAdmin() as return true on the client.
 					else
 						chat.AddText(Color(255,62,62), "WARNING: ", Color(255,255,255), "You must be an admin to change this option.")
 						chat.PlaySound()
@@ -198,7 +198,7 @@ hook.Add("PopulateToolMenu", "capaldi-PopulateToolMenu", function()
 		local button = vgui.Create( "DButton" )
 		button:SetText( "Reset Spawn Offset" )
 		button.DoClick = function(self)
-			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then
+			if LocalPlayer():IsAdmin() or LocalPlayer():IsSuperAdmin() then -- If this is removed clientsidedly you can EXPLOIT and SPAM this using net.SendToServer. How dumb can some people be as to not add a secondary net var with the player themselves and CHECK ADMIN STATUS ON SERVER INSTEAD OF CLIENT. REALLY. I COULD RANT ON FOR 100000 YEARS WITH THIS. STOP checking ADMIN STATUS. ON. CLIENT. xD
 				if slider then
 					slider:SetValue(0)
 				end
